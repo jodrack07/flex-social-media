@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { PrimaryButton, Button } from '../../components/helpers/Button/Button';
 import './login.scss';
 
@@ -15,9 +16,11 @@ export default function Login() {
               consectetur ex pariatur.
             </p>
             <span>Do not have an account?</span>
-            <Button _class='' onClick={() => null}>
-              Register
-            </Button>
+            <Link to='/auth/register'>
+              <Button _class='' onClick={() => null}>
+                Register
+              </Button>
+            </Link>
           </div>
         </div>
         <div className='platform__login-form'>
@@ -36,6 +39,7 @@ export default function Login() {
                 id='password'
                 placeholder='Password'
               />
+
               <PrimaryButton onClick={() => null}>Login</PrimaryButton>
             </form>
           </div>
