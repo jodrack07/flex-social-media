@@ -1,0 +1,122 @@
+@import '../../sass/partials/variables.scss';
+@import '../../sass/functions/pixels-convertion.scss';
+@import '../../sass/mixins/fonts.scss';
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  background-color: $blue-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .platform {
+    min-height: toRem(600);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: $white;
+
+    &__description {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      color: $white;
+      background: url('../../../public/images/globe.jpg') center;
+      background-size: cover;
+      color: white;
+      z-index: 2;
+      padding-top: toRem(30);
+
+      .__description {
+        display: flex;
+        flex-direction: column;
+        padding: toRem(25);
+        gap: 20px;
+        z-index: 50;
+
+        h1 {
+          font-size: toRem(100);
+          @include font-weight(heavy);
+          text-transform: capitalize;
+          line-height: 80px;
+        }
+
+        p {
+          margin-top: 0.8rem;
+        }
+
+        span {
+          font-size: toRem(14);
+          color: $blue-1;
+          @include font-weight(medium);
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+      }
+
+      button {
+        width: 50%;
+      }
+    }
+
+    &__login-form {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .content {
+        padding: toRem(20);
+
+        h1 {
+            @include font-weight(bold);
+            padding-bottom: 2rem;
+            font-size: 3rem;
+            text-transform: capitalize;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+
+        input {
+            height: 2rem;
+            border: none;
+            border-bottom: 2px solid $blue-1;
+            outline: none;
+            padding: 1rem .2rem;
+            margin: 1rem 0;
+        }
+
+        button {
+            width: 50%;
+            margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login {
+    .platform {
+      min-height: 600px;
+      width: 90%;
+      display: flex;
+      flex-direction: column-reverse;
+      background-color: $white;
+    }
+  }
+}
