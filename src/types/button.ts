@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 
 export type ButtonProps = {
+    _type?: "button" | "submit" | "reset" | undefined
     children: ReactNode;
     _class?: string;
-    onClick: () => any 
+    onClick: (e?: any) => void
 }

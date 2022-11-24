@@ -1,0 +1,19 @@
+@import '../../styles.scss';
+
+.layout {
+    @include themify($themes) {
+    display: flex;
+    flex-direction: column;
+    background-color: themed('bgSoft');
+    color: themed('textColor');
+
+    .container {
+        display: flex;
+        
+        .outlet {
+            flex: 6;
+            color: themed('textColor');
+        }
+    }
+}
+}

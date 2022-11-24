@@ -1,8 +1,27 @@
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../../app/hooks';
 import { PrimaryButton, Button } from '../../components/helpers/Button/Button';
 import './login.scss';
+import React, { useRef } from 'react';
+import { login } from '../../features/authSlice';
 
 export default function Login() {
+  const inputUsernameRef = useRef<HTMLInputElement | null>(null);
+  const inputPasswordRef = useRef<HTMLInputElement | null>(null);
+  const dispatch = useAppDispatch();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (inputUsernameRef.current?.value && inputPasswordRef.current?.value) {
+      dispatch(
+        login({
+          username: inputUsernameRef.current.value,
+          password: inputPasswordRef.current?.value,
+        })
+        );
+    }
+  };
+
   return (
     <div className='login'>
       <div className='platform'>
@@ -26,21 +45,25 @@ export default function Login() {
         <div className='platform__login-form'>
           <div className='content'>
             <h1>Login</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
               <input
+                ref={inputUsernameRef}
                 type='text'
                 name='username'
                 id='username'
                 placeholder='Username'
               />
               <input
+                ref={inputPasswordRef}
                 type='password'
                 name='password'
                 id='password'
                 placeholder='Password'
               />
 
-              <PrimaryButton onClick={() => null}>Login</PrimaryButton>
+              <PrimaryButton _type='submit' onClick={handleSubmit}>
+                Login
+              </PrimaryButton>
             </form>
           </div>
         </div>

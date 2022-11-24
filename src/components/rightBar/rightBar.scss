@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+
+.rightBar {
+  @include themify($themes) {
+    position: sticky;
+    top: 50px;
+    height: calc(100vh - 50px);
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: themed('textColor');
+    background-color: themed('bgSoft');
+    padding: 10px 20px;
+    overflow: scroll;
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
