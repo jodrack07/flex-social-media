@@ -1,0 +1,63 @@
+@import '../../sass/functions/fonts.scss';
+@import '../../sass/functions/pixels-convertion.scss';
+@import '../../sass/mixins/fonts.scss';
+@import '../../sass/partials/variables.scss';
+@import '../../styles.scss';
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2;
+    height: calc(100vh - 50px);
+    position: sticky;
+    top: 50px;
+    color: themed('textColor');
+    background-color: themed('bg');
+    overflow: scroll;
+
+    @include mobile {
+      display: none;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .container {
+      padding: toRem(20);
+      display: flex;
+      flex-direction: column;
+      gap: toRem(20);
+
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(10);
+
+        .item {
+          display: flex;
+          align-items: center;
+          gap: toRem(15);
+
+          span {
+            font-size: 1rem;
+            @include font-weight(medium);
+          }
+
+          img {
+            width: toRem(35);
+            height: toRem(35);
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+
+      hr {
+        margin: toRem(5) 0;
+        border: none;
+        height: toRem(0.5);
+        background-color: themed('border');
+      }
+    }
+  }
+}

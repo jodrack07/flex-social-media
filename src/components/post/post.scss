@@ -1,0 +1,99 @@
+@import '../../styles.scss';
+
+.post {
+  @include themify($themes) {
+    border-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: themed('bg');
+    color: themed('textColor');
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+
+      .user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left {
+          display: flex;
+          gap: 20px;
+
+          .moreDetails {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .profileLink {
+              text-decoration: none;
+              color: inherit;
+              font-weight: 500;
+              text-transform: capitalize;
+            }
+
+            span {
+              font-size: 12px;
+            }
+          }
+
+          img {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+          }
+        }
+
+        // .right {
+        // }
+      }
+
+      .content {
+        margin: 20px 0;
+        overflow: hidden;
+
+        p {
+          margin-bottom: 20px;
+
+          @include mobile {
+            font-size: 13px;
+            width: 100%;
+          }
+        }
+
+        img {
+          width: 100%;
+          max-height: 500px;
+          border-radius: 5px;
+        }
+      }
+
+      .actions {
+        display: flex;
+        gap: 25px;
+
+        .action {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            .icon {
+                font-size: 30px;
+                
+                @include mobile {
+                  font-size: 20px;
+                }
+
+                &.liked {
+                    color: red;
+                }
+            }
+        }
+      }
+    }
+  }
+}

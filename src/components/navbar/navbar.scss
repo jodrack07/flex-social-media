@@ -1,0 +1,102 @@
+@import '../../sass/functions/fonts.scss';
+@import '../../sass/functions/pixels-convertion.scss';
+@import '../../sass/mixins/fonts.scss';
+@import '../../sass/partials/variables.scss';
+@import '../../styles.scss';
+
+.navbar {
+  @include themify($themes) {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    border-bottom: 1px solid themed('border');
+    background-color: themed('bg');
+    color: themed('textColor');
+    padding: 10px 20px;
+    z-index: 999;
+
+    @include mobile {
+      padding: 5px 10px;
+    }
+
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: toRem(20);
+
+        .logo {
+          font-size: 1.5rem;
+          color: $blue-1;
+          text-transform: capitalize;
+          @include font-weight(heavy);
+        }
+
+        .search {
+          display: flex;
+          align-items: center;
+          gap: toRem(10);
+          border: 1px solid themed('border');
+          padding: toRem(5);
+          
+          input {
+            width: toRem(500);
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            background-color: transparent;
+            color: themed(textColor);
+
+            @include mobile {
+            display: none;
+            }
+          }
+        }
+      }
+
+      .right {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: toRem(15);
+
+        @include mobile {
+          display: none;
+        }
+
+        &__icon {
+          display: flex;
+          align-content: center;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: toRem(5);
+
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          span {
+            font-size: 1rem;
+            color: themed('textColor');
+            text-transform: capitalize;
+            @include font-weight(bold);
+          }
+        }
+      }
+    }
+  }
+}
