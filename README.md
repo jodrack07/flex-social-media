@@ -8,6 +8,9 @@ Purppose: Designing a social Media platform
 > RDT(ReduxToolKit)
 > Sass
 
+## Live Demo
+[flexsocial](https://flexsocial.netlify.app/)
+
 ## Author
 
 👤 **Jodrack**
