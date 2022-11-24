@@ -1,0 +1,5 @@
+@import '../functions//fonts.scss';
+
+@mixin font-weight($keyword) {
+    font-weight: font-weight($keyword);
+}

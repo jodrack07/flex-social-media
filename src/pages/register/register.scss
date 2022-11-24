@@ -1,0 +1,91 @@
+@import '../../sass/partials/variables.scss';
+@import '../../sass/partials/button.scss';
+@import '../../sass/mixins/fonts.scss';
+@import '../../sass/functions/pixels-convertion.scss';
+@import '../../sass/functions/fonts.scss';
+
+.register {
+    height: 100vh;
+    width: 100vw;
+    background-color: $blue-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .platform {
+        min-height: 600px;
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        background-color: $white;
+
+        &__description {
+            position: relative;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            color: $white;
+            background: url('../../../public/images/globe.jpg') center;
+            background-size: cover;
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: rgba(0, 0, 0, .5);
+                z-index: 0;
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                gap: toRem(20);
+                z-index: 2;
+                padding: 1.5rem;
+
+                h1 {
+                    font-size: 2.5rem;
+                    @include font-weight(heavy);
+                }
+
+                button {
+                    width: 50%;
+                }
+            }
+        }
+        
+        &__register {
+            flex: 1;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+                gap: toRem(20);
+                padding: 1.5rem;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    gap: toRem(20);
+
+                    input {
+                        border: none;
+                        outline: none;
+                        padding: .5rem .2rem;
+                        border-bottom: 2px solid $blue-1;
+                    }
+
+                    button {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+    }
+}

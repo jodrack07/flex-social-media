@@ -1,0 +1,53 @@
+@import '../../styles.scss';
+
+.lastActivities {
+  @include themify($themes) {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: themed('bg');
+    color: themed('textColor');
+
+    .container {
+      padding: 20px;
+
+      .activities {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        span {
+          text-transform: capitalize;
+          font-size: 1rem;
+          font-weight: 600;
+          color: themed('textColorSoft');
+        }
+
+        .activity {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+
+          span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: themed('textColor');
+          }
+
+          .user {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}

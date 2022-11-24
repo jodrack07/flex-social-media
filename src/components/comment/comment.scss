@@ -1,0 +1,83 @@
+@import '../../styles.scss';
+
+.comment {
+  @include themify($themes) {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+
+  // since all images have the same size, better make this somehow general
+  img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .userBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    .image {
+      display: flex;
+      align-items: center;
+    }
+
+    input {
+      height: 36px;
+      width: 100%;
+      outline: none;
+      padding: 5px 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid themed('border');
+      background-color: transparent;
+      color: themed('textColor');
+    }
+
+    ._btn {
+      padding: 8px;
+    }
+  }
+
+  .otherPeoplecomments {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    .comment {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 20px;
+
+      .details {
+        display: flex;
+        gap: 10px;
+
+        .descriptionBox {
+          width: 85%;
+          .user {
+            font-weight: bold;
+            text-transform: capitalize;
+          }
+
+          .description {
+            font-size: 0.9rem;
+          }
+        }
+      }
+
+      .timing {
+        flex: 1;
+        align-self: center;
+        font-size: 14px;
+        color: themed('border');
+      }
+    }
+  }
+}
+}
