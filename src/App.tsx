@@ -1,4 +1,3 @@
-import './app.scss';
 import Login from './pages/login/Login';
 import {
   createBrowserRouter,
